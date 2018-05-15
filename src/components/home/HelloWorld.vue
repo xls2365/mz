@@ -9,8 +9,8 @@
 
 
 <script>
-import "../../static/swiper.min.css"
-import Swiper from "../../static/swiper.min.js"
+import "../../../static/swiper.min.css"
+import Swiper from "../../../static/swiper.min.js"
 export default {
   name: 'HelloWorld',
   created(){
