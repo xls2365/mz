@@ -39,8 +39,7 @@ export default {
           stopOnLastSlide: false,
           disableOnInteraction: false,
         }
-      }) 
-           
+      })
   }
 }
 </script>

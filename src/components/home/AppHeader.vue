@@ -10,11 +10,10 @@
             <b class="fa fa-user"></b>
         </div>
         <div class="address">
-            <a href="">北京</a>
+            <router-link to="/city">{{this.$store.state.city}}</router-link>
             <u class="fa fa-chevron-down"></u>
         </div>
-        
-        
+
     </div>
 </template>
 <script>
