@@ -3,10 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import fastClick from 'fastclick'
 import axios from "axios"
+import 'styles/reset.css'
+import 'styles/border.css'
 
 Vue.config.productionTip = false
-Vue.prototype.$http = axios; 
+fastClick.attach(document.body)
+Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({
