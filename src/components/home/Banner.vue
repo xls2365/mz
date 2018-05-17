@@ -12,7 +12,7 @@
 import "../../../static/swiper.min.css"
 import Swiper from "../../../static/swiper.min.js"
 export default {
-  name: 'HelloWorld',
+  name: 'Banner',
   created(){
     this.get()
   },

@@ -1,24 +1,45 @@
 <template>
+<div>
     <div class="apphead">
-        <div class="icon">
+        <div class="icon" @click="show" >
             <i class="fa fa-align-justify"></i>
         </div>
-        <div class="move">
+        <div class="move" @click="show">
             卖座电影
         </div>
-        <div class="login">
+        <router-link to="/register" class="login">
             <b class="fa fa-user"></b>
-        </div>
+        </router-link>
         <div class="address">
             <router-link to="/city">{{this.$store.state.city}}</router-link>
             <u class="fa fa-chevron-down"></u>
         </div>
-
     </div>
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div class="mask" v-show="isshow" @click="show"></div>
+    </transition>
+    <transition enter-active-class="animated slideInLeft" leave-active-class="animated slideOutLeft">
+        <app-list v-show="isshow"></app-list>
+    </transition>
+</div>
 </template>
 <script>
+import AppList from "./AppList"
+import {mapMutations} from "vuex"
 export default {
-    name:"AppHeader"
+    name:"AppHeader",
+    methods:{
+        // show(){
+        //     this.$store.commit("show")
+        // }
+        ...mapMutations(["show"])
+    },
+    computed:{
+        isshow(){
+            return this.$store.state.isshow
+        }
+    },
+    components:{AppList},
 }
 </script>
 <style scoped lang="stylus">
@@ -53,8 +74,6 @@ export default {
             overflow: hidden;
         }
     }
-  
-    
     .apphead{
          float: left;
         font-size: 14px;
@@ -75,5 +94,12 @@ export default {
         width: 48px;
         text-align: center;
         color: #999;
+    }
+    .mask{
+        position :fixed;
+        height:100%;
+        width:100%;
+        background:rgba(0,0,0,.6) ;
+        z-index:10;
     }
 </style>

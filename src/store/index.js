@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    city: localStorage.city || '珠海'
+    city: localStorage.city || '珠海',
+    isshow: false
   },
   actions: {
     changeCity (ctx, city) {
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     changeCity (state, city) {
       state.city = city
       localStorage.city = city
+    },
+    show (state, val) {
+      state.isshow = !state.isshow
     }
   }
 })
