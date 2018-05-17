@@ -1,22 +1,26 @@
 <template>
     <div class="applist">
-        <router-link tag="li" v-for="item in list" :key="item.id" :to="item.path">{{item.title}}</router-link>     
+        <router-link tag="li" @click.native="showlist" v-for="item in list" :key="item.id" :to="item.path">{{item.title}}</router-link>     
     </div>
 </template>
 <script>
+import {mapActions} from "vuex"
 export default {
     name:"AppList",
     data(){
         return {
             list:[
                 {id:1,title:"首页",path:"/index"},
-                {id:2,title:"影片",path:"/film"},
+                {id:2,title:"影片",path:"/list"},
                 {id:3,title:"影院",path:"/cenima"},
                 {id:4,title:"商城",path:"/shop"},
                 {id:5,title:"我的",path:"/own"},
                 {id:6,title:"卖座卡",path:"/card"}
             ]
         }
+    },
+    methods:{
+        ...mapActions(["showlist"])
     }
 }
 </script>

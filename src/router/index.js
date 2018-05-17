@@ -4,6 +4,7 @@ import City from '@/components/city/City'
 import Home from '@/components/home/Home'
 import Register from '@/components/register/Register'
 import Center from '@/components/center/Center'
+import ListBox from '@/components/home/ListBox'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/center',
       name: 'Center',
       component: Center
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: ListBox
     }
   ],
   scrollBehavior (to, from, savedPosition) {

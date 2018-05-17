@@ -11,6 +11,9 @@ export default new Vuex.Store({
   actions: {
     changeCity (ctx, city) {
       ctx.commit('changeCity', city)
+    },
+    showlist(content){
+      content.commit("show")
     }
   },
   mutations: {
