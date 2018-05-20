@@ -1,6 +1,6 @@
 <template>
     <div class="applist">
-        <router-link tag="li" v-for="item in list" :key="item.id" :to="item.path">{{item.title}}</router-link>     
+        <router-link tag="li" v-for="item in list" :key="item.id" :to="item.path">{{item.title}}</router-link>
     </div>
 </template>
 <script>
@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-    .applist{ 
+    .applist{
         border-top: 1px solid #222;
         box-shadow: 0 1px 1px #363636 inset;
         background: #282828;

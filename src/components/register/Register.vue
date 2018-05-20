@@ -44,7 +44,8 @@ export default {
         }
       },1000)
     },
-    handleBtnClick () {
+    handleBtnClick (inputPhone) {
+      this.$store.dispatch('changePhone', inputPhone)
       this.phoneTrue = false
       this.phoneEmpty = false
       this.passEmpty = false
@@ -58,7 +59,8 @@ export default {
       } else {
         this.phoneTrue = true
       }
-    }
+      //console.log(this.$store)
+    },
   },
   watch: {
     inputPhone () {
@@ -67,7 +69,6 @@ export default {
         this.sendShow = true
       } else {
         this.sendShow = false
-
       }
     }
   }

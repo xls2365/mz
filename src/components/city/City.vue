@@ -1,5 +1,6 @@
 <template>
 <div class="list-wrapper">
+<keep-alive>
   <div class="list">
       <div class="area">
         <div class="title">GPS定位你当前的位置</div>
@@ -24,6 +25,7 @@
         </div>
       </div>
     </div>
+</keep-alive>
 </div>
 </template>
 
@@ -43,6 +45,7 @@ export default {
   },
   methods: {
     handleCityClick (city) {
+      //console.log(this.$store)
       this.$store.dispatch('changeCity', city)
       this.$router.push('/')
     },
